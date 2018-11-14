@@ -160,6 +160,16 @@ char *BasicOperationList[] = {
   , "Msub_32_32_r"  
 #endif /* #ifdef ENH_32_BIT_OPERATOR */
 
+#ifdef ENH_U_32_BIT_OPERATOR
+  , "UL_addNs"
+  , "UL_subNs"
+  , "UL_Mpy_32_32"
+  , "Mpy_32_32_uu"
+  , "Mpy_32_16_uu"
+  , "norm_ul"
+  , "UL_deposit_l"  
+#endif /* #ifdef ENH_U_32_BIT_OPERATOR */
+
 #ifdef CONTROL_CODE_OPS
   , "LT_16"   
   , "GT_16"   
@@ -268,6 +278,16 @@ const BASIC_OP op_weight = {
   , 1
   , 1 
 #endif /* #ifdef ENH_32_BIT_OPERATOR */
+
+#ifdef ENH_U_32_BIT_OPERATOR
+  , 1
+  , 1
+  , 1
+  , 2
+  , 2
+  , 1
+  , 1
+#endif /* #ifdef ENH_U_32_BIT_OPERATOR */
 
 #ifdef CONTROL_CODE_OPS
   , 1   

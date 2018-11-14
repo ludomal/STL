@@ -31,11 +31,6 @@
 #include "enh1632.h"
 #include "enh40.h"
 
-
-#if defined (ALLOW_ENH_UL32)
-// #include "enhUL32.h"
-#endif
-
 #ifdef ENH_64_BIT_OPERATOR
 #include "enh64.h"
 #endif
@@ -48,6 +43,9 @@
 #include "complex_basop.h"
 #endif
 
+#ifdef ENH_U_32_BIT_OPERATOR
+#include "enhUL32.h"
+#endif
 
 #endif /* ifndef _STL_H */
 

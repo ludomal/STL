@@ -411,6 +411,16 @@ typedef struct {
   UWord32 Msub_32_32_r;            /* Complexity Weight of 1 */
 #endif /* #ifdef ENH_32_BIT_OPERATOR */
 
+#ifdef ENH_U_32_BIT_OPERATOR
+  UWord32 UL_addNs;                /* Complexity Weight of 1 */
+  UWord32 UL_subNs;                /* Complexity Weight of 1 */
+  UWord32 UL_Mpy_32_32;            /* Complexity Weight of 1 */
+  UWord32 Mpy_32_32_uu;            /* Complexity Weight of 2 */
+  UWord32 Mpy_32_16_uu;            /* Complexity Weight of 2 */
+  UWord32 norm_ul;                 /* Complexity Weight of 1 */
+  UWord32 UL_deposit_l;            /* Complexity Weight of 1 */
+#endif /* #ifdef ENH_U_32_BIT_OPERATOR */
+
 #ifdef CONTROL_CODE_OPS
   UWord32 LT_16;                   /* Complexity Weight of 1 */
   UWord32 GT_16;                   /* Complexity Weight of 1 */
