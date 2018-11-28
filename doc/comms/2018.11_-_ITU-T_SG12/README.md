@@ -95,7 +95,7 @@ ITU-T SG12 Recommendations are typically updated at rate of 2 years or more, alt
 
 Developing code in an open source environment is very different from developing code in a closed environment.
 
-* Review process
+## Review process
 
 GitHub review process ensures that each submission, known as Pull Requests (PR), is reviewed by another peer.
 This step can be a slow process depending of the availability of reviewers, the number of lines submitted and the amount of interactions between the submitter and the reviewers.
@@ -110,9 +110,9 @@ As all changes are scrutinized and discussed, the review process leads to higher
 
 GitHub provides a effective tools for code review and enables focused discussions on specific parts of the code.
 
-* Deadlines helped keep the momentum
+## Deadlines helped keep the momentum
 
-* Getting proficient at GIT
+## Getting proficient at GIT
 
 While GitHub provides great tools for reviewing PRs, it does not provide much help for editing files beyond simple commits.
 It is likely that when PRs are submitted, changes may be requested by the reviewer, which may required advanced GIT operations such as cherry-picking or rebasing.
@@ -122,7 +122,7 @@ Furthermore GitHub process for preparing PRs are typically to: clone the reposit
 GitHub does not allow cloning the same project more than once for any given account which is inconvenient when working on several PRs.
 It may be necessary to use different accounts or to maintain the synchronization between your local repository and there original repository before starting the edits.
 
-* Continuous Integration
+## Continuous Integration
 
 Setting up continuous integration on open-source repository helps verify that new PRs do not break the code.
 Continuous integration, such as Travis, fetches and compiles the code for each PR, then performs specified regression tests.
