@@ -2,7 +2,7 @@
 
 # Status report on the open-source Software Tool Library activity
 
-## Summary
+# Summary
 
 This report provides a progress report on the operation of the ITU-T Software Tool Library (STL) as an open-source initiative, as a mechanism to include a wider base of users and coders to maintain and enlarge the ITU-T STL.
 The activity was launched by SG12 in 2017 and is currently fully operational within GitHub [https://github.com/openitu/STL].
