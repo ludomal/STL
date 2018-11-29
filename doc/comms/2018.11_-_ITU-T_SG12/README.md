@@ -106,7 +106,7 @@ This not only has the advantage to reduce the time needed for code review, but a
 
 ## Deadlines help keep the momentum
 
-## Getting proficient at GIT
+## Getting proficient at Git
 
 GitHub provides an effective set of tools for code review and enables focused discussions on specific parts of the code. 
 However, there is an initial learning curve to make good use of the different possibilities.
@@ -130,5 +130,3 @@ Continuous integration, such as [Travis CI](https://travis-ci.org), fetches and 
 These can be set up for different operating systems and compilers.
 
 The code used for regression tests may need to be adapted in order to return information easily consumable by the test framework.
-
-*Should we add an annex with GitHub concepts? Eg pull request, commit, cherry-picking, rebasing, cloning, fork, ...)
