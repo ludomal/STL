@@ -31,7 +31,7 @@ The revised draft Recommendation is available as [SG12-TD648](https://www.itu.in
 
 ## Liaison statement to 3GPP SA4 and other relevant SDOs
 
-It is propose to send a liaison statement to 3GPP SA4 for the following reasons:
+It is proposed to send a liaison statement to the relevant SDOs for the following reasons:
 
 - To provide a status of STL2018
 - To ask feedback on which compilers and operating systems should be supported 
