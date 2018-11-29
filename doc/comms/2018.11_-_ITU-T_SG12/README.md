@@ -15,9 +15,9 @@ Opening the development of the STL, and this Recommendation, to the to open-sour
 A substantial amount of work was necessary to port the existing code to the GitHub open-source platform.
 This included: 
 
-- the generation of configuration files for cross-platform build toolchains and regression tests (CMake), 
-- the integration of the project with Continuous Integration platforms (Travis), 
-- the conversion of documents into plain text format (MarkDown),
+- the generation of configuration files for cross-platform build toolchains and regression tests [CMake](https://cmake.org/), 
+- the integration of the project with Continuous Integration platforms [Travis CI](https://travis-ci.org), 
+- the conversion of documents into plain text format [MarkDown](https://daringfireball.net/projects/markdown),
 - bug fixing to account for restrictive compilers,
 - the harmonization of source code style
 
@@ -37,11 +37,6 @@ It is propose to send a liaison statement to 3GPP SA4 for the following reasons:
 - To ask feedback on which compilers and operating systems should be supported 
 - To encourage contributions directly to GitHub to reduce the communication time overhead introduced by the exchange of Liaison Statements
 - [3GPP SA4 only] To appoint one or more 3GPP SA4 delegates for discussion and code review on GitHub
-
-## Liaison statement to other SDOs
-
-- To announce the availability of STL 2018, if consented
-- To ask feedback on which compilers and operating systems should be supported
 
 ## Review and integrate relevant STL2014 code
 
