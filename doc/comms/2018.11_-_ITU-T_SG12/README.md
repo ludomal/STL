@@ -4,13 +4,13 @@
 
 ## Summary
 
-This report provides a progress report on the operation of the ITU-T Software Tool LIbrary (STL) as an open-source initiative, as a mechanism to include a wider base of users and coders to maintain and enlarge the ITU-T STL.
-The activity was launched by SG12 in 2017 and is currently fully operational within GitHub (*ADD URL TO REPOSITORY*).
+This report provides a progress report on the operation of the ITU-T Software Tool Library (STL) as an open-source initiative, as a mechanism to include a wider base of users and coders to maintain and enlarge the ITU-T STL.
+The activity was launched by SG12 in 2017 and is currently fully operational within GitHub [https://github.com/openitu/STL].
 
-The first Recommendation offered within this framework is ITU-T Rec. G.191, the Software Tool Library (STL).
-[TODO] The first version of the Recommendation was approved in March 1993 and proposed a set of tools to facilitate speech processing in standardization activities. G.191 contains a summary of all the tools implemented in the STL, and the library itself as an electronic attachment.
+The first version of the Recommendation was approved in March 1993 and proposed a set of tools to facilitate speech processing in standardization activities. 
+G.191 contains a summary of all the tools implemented in the STL, and the library itself as an electronic attachment.
 The Recommendation was subsequently updated over the years by enthusiast ITU-T members, in a collaborative effort frequently involving external players and using an open-source license.
-Opening the development of the STL - and this Recommendation - to the to open-source community was the next natural step.
+Opening the development of the STL, and this Recommendation, to the to open-source community was the next natural step.
 
 A substantial amount of work was necessary to port the existing code to the GitHub open-source platform.
 This included: 
@@ -24,23 +24,24 @@ This included:
 The STL was further extended with the new basic operators contributed by 3GPP SA4 [#26.973 v15.1.0](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3326).
 These extension offers support for complex, 64-bit and enhanced 32-bit operators.
 
-The open-source community is pleased to submit the first release of Software Tool Library to the ITU for standardization.
+The open-source community is pleased to submit the first release of Software Tool Library to the ITU for standardization. 
 The revised draft Recommendation is available as [SG12-TD648](https://www.itu.int/md/T17-SG12-181127-TD-GEN-0648/en).
 
 # Proposed next steps
 
-## Liaison statement to 3GPP SA4
+## Liaison statement to 3GPP SA4 and other relevant SDOs
 
 It is propose to send a liaison statement to 3GPP SA4 for the following reasons:
 
-- To provide them with a status of STL2018
+- To provide a status of STL2018
+- To ask feedback on which compilers and operating systems should be supported 
+- To encourage contributions directly to GitHub to reduce the communication time overhead introduced by the exchange of Liaison Statements
+- [3GPP SA4 only] To appoint one or more 3GPP SA4 delegates for discussion and code review on GitHub
 
-- To ask 3GPP SA4 experts whether / which of the previously defined basic operators are still in use *DO WE WANT TO ASK THIS QUESTION? EARLIER VERSIONS OF RECOMMENDATIONS MAY STILL USE THEM AND 3GPP WILL NOT KNOW IT.*
+## Liaison statement to other SDOs
 
-- To ask their feedback on which compilers and operating system should be supported *WHY ONLY 3GPP?*
-
-- To discuss more efficient communication channels than Liaison Statements between 3GPP SA4 and ITU concerning updated of the STL.*NEED TO BE SPECIFIC.*
-For example, have one or more 3GPP SA4 delegates actively participating on GitHub for discussions and code reviews relevant to 3GPP? 
+- To announce the availability of STL 2018, if consented
+- To ask feedback on which compilers and operating systems should be supported
 
 ## Review and integrate relevant STL2014 code
 
@@ -50,12 +51,11 @@ The code should be reviewed the make sure the updates do not interfere with the 
 If there are conflicts, they need to be investigated with relevant parties and 3GPP SA4 in particular.
 
 ## Update the STL manual
-An updated version of the STL Users Manual is being drafted and is available in the GitHub platform (*ADD URL*). 
-* The text of the manual should be reviewed for correctness.
 
-* Text for the new basic operators needs to be incorporated. 
-
-* The current text related to the STL2014 additons should be reviewed.
+An updated version of the STL Users Manual is being drafted and is available on the GitHub platform (https://github.com/openitu/STL/tree/dev/manual).
+- The text of the manual should be reviewed for correctness
+- Text for the new basic operators needs to be incorporated 
+- The current text related to the STL2014 additions should be reviewed
 
 ## Clean up of documentation
 
@@ -63,7 +63,8 @@ It is proposed to unify the source code documentation and README files.
 
 ## Review the supported infrastructure (compilers and operating system)
 
-It is desirable to limit the number of supported platforms to ease maintenance and technical debt (*?DEBT?*). Some of the supported compilers are no longer available, making regression tests difficult to verify.
+It is desirable to limit the number of supported platforms to ease maintenance.
+Some of the supported compilers are no longer available, making regression tests difficult to verify.
 
 Maintaining the compatibility with very old compilers may also limit the level of code clean up that can be realized.
 
@@ -87,18 +88,15 @@ Creating language binding (e.g. Python) for the most popular functions might inc
 ## Release cycle and roadmap
 
 Open-source code is a continuous effort and constantly evolves.
-To keep up the momentum, it is suggested to set milestones for each SG12 meeting. *OR: To set milestones revised at each SG12 meeting.*
+To keep up the momentum, it is suggested to set milestones revised at each SG12 meeting.
 
 ITU-T SG12 Recommendations are typically updated at rate of 2 years or more, although revisions of the STL may be proposed for consent at a faster pace if substantial improvements are available.
-
 
 # Lessons learnt
 
 Developing code in an open source environment is very different from developing code in a closed environment.
 
 ## Review process
-
-*changed the order of a few sentences*
 
 GitHub review process ensures that each submission, known as *Pull Requests* (PRs), is reviewed by another peer.
 This step can be a slow process depending of the availability of reviewers, the number of lines submitted and the amount of interactions between the submitter and the reviewers.
@@ -115,20 +113,25 @@ This not only has the advantage to reduce the time needed for code review, but a
 
 ## Getting proficient at GIT
 
-GitHub provides an effective set of tools for code review and enables focused discussions on specific parts of the code. However, there is a substantial initial learning curve to make good use of the different possibilities. Some examples follow.
+GitHub provides an effective set of tools for code review and enables focused discussions on specific parts of the code. 
+However, there is an initial learning curve to make good use of the different possibilities.
+Some examples follow.
 
 While GitHub provides great tools for reviewing PRs, it does not provide much help for editing files beyond simple code change commits.
-It is likely that when PRs are submitted, changes may be requested by the reviewer, which may require advanced GIT operations such as cherry-picking or rebasing.
-These operations require a good understanding of the GIT platform (*GIT or GIThub?*).
+It is likely that when PRs are submitted, changes may be requested by the reviewers, which may require advanced Git operations such as cherry-picking or rebasing.
 
-Furthermore, GitHub process for preparing PRs are typically to: clone the repository to your account, perform the edits, then push the changes to the source repository.
-GitHub does not allow cloning the same project more than once for any given account, which is inconvenient when working on several PRs.
-It may be necessary to use different accounts or to maintain the synchronization between your local repository and there original repository before starting the edits.
+Preparing several pull requests at the same time may require juggling between branches. 
+It is sometime easier to create different clones of the repository.
+
+These operations require a good understanding of Git and GitHub.
+The following pages could be a good start:
+- [https://git-scm.com/docs/gittutorial]
+- [https://help.github.com/categories/collaborating-with-issues-and-pull-requests]
 
 ## Continuous integration
 
 Setting up continuous integration on the open-source repository helps verify that new PRs do not break the code.
-Continuous integration, such as Travis (*add reference/URL*), fetches and compiles the code for each PR, then performs specified regression tests.
+Continuous integration, such as [Travis CI](https://travis-ci.org), fetches and compiles the code for each PR, then performs specified regression tests.
 These can be set up for different operating systems and compilers.
 
 The code used for regression tests may need to be adapted in order to return information easily consumable by the test framework.
