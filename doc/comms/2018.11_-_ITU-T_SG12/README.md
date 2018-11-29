@@ -63,15 +63,6 @@ Some of the supported compilers are no longer available, making regression tests
 
 Maintaining the compatibility with very old compilers may also limit the level of code clean up that can be realized.
 
-## Incorporating more ITU-T Recommendations?
-*FOR ME THIS IS MIXING UP TWO SEPARATE ISSUES - G.191 as an open source software, which I think is the objective of this document, and then what other Recs could be included in the GitHub - but then as open source? (With all the IPR implications that it carries...). Maybe better addressed in separate documents? Or you propose to add the Recs below as part of the STL itself (not the openITU platform)*
-
-Should we consider incorporating more ITU-T Recommendations to the openitu GitHub repository?
-
-For example Recommendations ITU-T P.563, P.861, P.862 come with source code that could be easily ported to GitHub, subject to permission to publish code.
-
-There might be also interest in implementing the E.Model (Rec. ITU-T G.107).
-
 ## Addition test cases
 
 Additional test cases should be created to ensure that all compiled binaries are operating as expected.
@@ -130,3 +121,12 @@ Continuous integration, such as [Travis CI](https://travis-ci.org), fetches and 
 These can be set up for different operating systems and compilers.
 
 The code used for regression tests may need to be adapted in order to return information easily consumable by the test framework.
+
+
+# For discussion: more ITU-T Recommendations on GitHub?
+
+Should we consider incorporating more ITU-T Recommendations to the openitu GitHub repository?
+
+Implementations of the E.Model (Rec. ITU-T G.107) could be intergrated within the STL.
+
+Other examples are Recommendations ITU-T P.563 and P.862 which come with source code that could be easily ported to GitHub (subject to permission of copyright owners).
