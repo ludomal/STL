@@ -10,7 +10,7 @@ The project was initiated in 2017 with the goal of offering the open-source comm
 The first Recommendation offered within this framework is ITU-T Rec. G.191, the Software Tool Library (STL).
 [TODO] The first version of the Recommendation was approved in XXX and proposed a set of tools to facilitate speech processing in standardization activities.
 The Recommendation was subsequently updated over the years by enthusiast ITU-T members, in an open-source spirit.
-Proposing this Recommendation to the to open-source community was the next natural step.
+Proposing this Recommendation to the open-source community was the next natural step.
 
 A substantial amount of work was necessary to port the existing code to an open-source platform.
 This included: 
@@ -31,7 +31,7 @@ The revised draft Recommendation is available as [TD0648](https://www.itu.int/md
 
 ## Liaison statement to 3GPP
 
-It is propose to send a liaison statement to 3GPP for the following reasons:
+It is proposed to send a liaison statement to 3GPP for the following reasons:
 
 * To provide them with a status of STL2018
 
