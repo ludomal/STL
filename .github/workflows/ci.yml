@@ -31,26 +31,35 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.os }} / ${{ matrix.compiler }}
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Configure (Unix)
         if: runner.os != 'Windows'
-        run: cmake -B build
+        run: cmake .
         env:
           CC: ${{ matrix.cc }}
           CXX: ${{ matrix.cxx }}
 
       - name: Configure (Windows)
         if: runner.os == 'Windows'
-        run: cmake -B build
+        run: |
+          # Exclude build directory from Windows Defender to avoid scan delays
+          powershell -Command "Add-MpPreference -ExclusionPath '${{ github.workspace }}'"
+          cmake .
 
       - name: Build
-        run: cmake --build build
+        run: cmake --build .
 
-      - name: Test
-        run: ctest --test-dir build --output-on-failure
+      - name: Test (Unix)
+        if: runner.os != 'Windows'
+        run: ctest --output-on-failure
+
+      - name: Test (Windows)
+        if: runner.os == 'Windows'
+        run: ctest --output-on-failure --timeout 30
 
   manual:
     runs-on: ubuntu-latest
