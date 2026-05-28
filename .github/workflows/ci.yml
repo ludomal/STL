@@ -34,6 +34,7 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
 
       - name: Configure (Unix)
@@ -50,8 +51,13 @@ jobs:
           powershell -Command "Add-MpPreference -ExclusionPath '${{ github.workspace }}'"
           cmake .
 
-      - name: Build
+      - name: Build (Unix)
+        if: runner.os != 'Windows'
         run: cmake --build .
+
+      - name: Build (Windows)
+        if: runner.os == 'Windows'
+        run: cmake --build . --config Release
 
       - name: Test (Unix)
         if: runner.os != 'Windows'
@@ -59,7 +65,7 @@ jobs:
 
       - name: Test (Windows)
         if: runner.os == 'Windows'
-        run: ctest --output-on-failure --timeout 30
+        run: ctest --output-on-failure --build-config Release
 
   manual:
     runs-on: ubuntu-latest
