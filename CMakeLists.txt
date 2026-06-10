@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10...3.31)
-project(STL2023 VERSION 2023)
+project(STL2026 VERSION 2026)
 
 add_definitions( -DVERSION_STL="${CMAKE_PROJECT_NAME}" -DCMAKE_POLICY_VERSION_MINIMUM=3.5 )
 
@@ -22,7 +22,6 @@ add_subdirectory(src/basop/test_framework)
 add_subdirectory(src/basop/flc)
 add_subdirectory(src/bs1770demo)
 add_subdirectory(src/eid)
-add_subdirectory(src/eid-amr)
 add_subdirectory(src/esdru)
 add_subdirectory(src/fir)
 add_subdirectory(src/freqresp)
