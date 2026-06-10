@@ -115,7 +115,7 @@ void initTables () {
   /* T_SUB() and R_SUB() allocations */
   T_STATE = (FTYPE *) malloc (NP * sizeof (FTYPE));
   T_VEC = (FTYPE *) malloc (S_LEN * sizeof (FTYPE));
-  P = (FTYPE *) malloc (S_LEN * sizeof (FTYPE));
+  P = (FTYPE *) calloc (S_LEN, sizeof (FTYPE));
   P_VEC = (FTYPE *) malloc (S_LEN * sizeof (FTYPE));
   W_P_VEC = (FTYPE *) malloc (S_LEN * sizeof (FTYPE));
   BASIS = (FTYPE *) malloc (S_LEN * C_BITS * sizeof (FTYPE));
