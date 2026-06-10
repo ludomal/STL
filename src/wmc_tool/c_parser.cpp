@@ -883,6 +883,7 @@ static TOOL_ERROR Add_Insertion(
                 }
                 InsertRec_ptr = InsertTbl_ptr->Data + InsertTbl_ptr->Size;
                 /* Fill Record */
+                memset(InsertRec_ptr, 0, sizeof(*InsertRec_ptr));
                 InsertRec_ptr->Ptr = (char *)ptr;
                 /* Reset # of Chars Stored */
                 nChars = 0;
