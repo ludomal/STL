@@ -5442,6 +5442,7 @@ static TOOL_ERROR Instrument_Operators(
 
     /* Initialize (No Memory Allocated by Default) */
     OperInsTbl.MaxSize = 0;
+    OperInsTbl.Data = NULL;
 
     /* Get Parse Table Address (for clarity) */
     ParseTbl_ptr = &ParseCtx_ptr->ParseTbl;
