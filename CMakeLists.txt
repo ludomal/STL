@@ -9,6 +9,19 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 if("${CMAKE_C_COMPILER_ID}" STREQUAL "MSVC")
   message(DEBUG "libm: <<MSVC>> provides <<libm>> by default and thus __cannot_ link against <<libm>>.")
   set(M_LIBRARY "")
+
+  # Enable runtime checks for uninitialized variables in Debug builds
+  string(REPLACE "/RTC1" "" CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG}")
+  string(REPLACE "/RTC1" "" CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
+  set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} /RTCu" CACHE STRING "" FORCE)
+  set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /RTCu" CACHE STRING "" FORCE)
+
+  # Static library with RTC error handler to suppress popup dialogs
+  add_library(msvc_rtc_handler STATIC ${CMAKE_SOURCE_DIR}/src/utl/msvc_rtc_handler.c)
+  # Force linker to include the handler (otherwise it's discarded as unreferenced)
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /INCLUDE:init_rtc_handler_force" CACHE STRING "" FORCE)
+  # Link handler into all executables defined after this point
+  link_libraries(msvc_rtc_handler)
 else()
   set(M_LIBRARY "m")
 endif()
