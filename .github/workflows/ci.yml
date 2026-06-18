@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [dev, main, STL_2026_itu_submission]
+    branches: [dev, main, STL_2026_itu_submission, fix/windows-rtc-checks]
   pull_request:
     branches: [dev, main, STL_2026_itu_submission]
 
@@ -75,6 +75,53 @@ jobs:
       - name: Test (Windows)
         if: runner.os == 'Windows'
         run: ctest --output-on-failure --build-config Release
+
+  msan:
+    runs-on: ubuntu-latest
+    name: Memory Sanitizer (uninitialized reads)
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure with MSan
+        run: |
+          cmake . \
+            -DCMAKE_C_COMPILER=clang \
+            -DCMAKE_CXX_COMPILER=clang++ \
+            -DCMAKE_C_FLAGS="-fsanitize=memory -fno-omit-frame-pointer -O1 -g" \
+            -DCMAKE_CXX_FLAGS="-fsanitize=memory -fno-omit-frame-pointer -O1 -g" \
+            -DCMAKE_EXE_LINKER_FLAGS="-fsanitize=memory"
+
+      - name: Build
+        run: cmake --build .
+
+      - name: Test
+        run: ctest --output-on-failure
+        env:
+          MSAN_OPTIONS: halt_on_error=1:print_stats=1
+
+  msvc-analyze:
+    runs-on: windows-latest
+    name: MSVC static analysis
+    timeout-minutes: 30
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+
+      - name: Configure with /analyze
+        run: |
+          powershell -Command "Add-MpPreference -ExclusionPath '${{ github.workspace }}'"
+          cmake . -DCMAKE_C_FLAGS="/analyze"
+
+      - name: Build and capture analysis output
+        run: |
+          cmake --build . --config Release 2>&1 | Tee-Object -FilePath build.log
+          $uninit = Select-String -Path build.log -Pattern "warning C6001"
+          if ($uninit) {
+            Write-Host "=== Uninitialized variable use detected ==="
+            $uninit | ForEach-Object { Write-Host $_.Line }
+            exit 1
+          }
 
   manual:
     runs-on: ubuntu-latest
